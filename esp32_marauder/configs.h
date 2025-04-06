@@ -23,7 +23,7 @@
   //#define MARAUDER_REV_FEATHER
   //// END BOARD TARGETS
 
-  #define MARAUDER_VERSION "v1.3.1"
+  #define MARAUDER_VERSION "v1.4.0"
 
   #define GRAPH_REFRESH   100
 
@@ -413,6 +413,8 @@
 
       #define GRAPH_VERT_LIM TFT_HEIGHT/2
 
+      #define EXT_BUTTON_WIDTH 0
+
       #define CHAR_WIDTH 6
       #define SCREEN_WIDTH TFT_HEIGHT // Originally 240
       #define SCREEN_HEIGHT TFT_WIDTH // Originally 320
@@ -430,7 +432,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 6
-      #define BUTTON_ARRAY_LEN 100
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH (TFT_HEIGHT/16)
       #define LVGL_TICK_PERIOD 6
     
@@ -483,6 +485,8 @@
 
       #define GRAPH_VERT_LIM TFT_HEIGHT/2
 
+      #define EXT_BUTTON_WIDTH 0
+
       #define CHAR_WIDTH 6
       #define SCREEN_WIDTH TFT_HEIGHT // Originally 240
       #define SCREEN_HEIGHT TFT_WIDTH // Originally 320
@@ -500,7 +504,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 6
-      #define BUTTON_ARRAY_LEN 13
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH (TFT_HEIGHT/16)
       #define LVGL_TICK_PERIOD 6
 
@@ -543,6 +547,8 @@
 
       #define GRAPH_VERT_LIM TFT_HEIGHT/2
 
+      #define EXT_BUTTON_WIDTH 20
+
       #define CHAR_WIDTH 12
       #define SCREEN_WIDTH TFT_WIDTH
       #define SCREEN_HEIGHT TFT_HEIGHT
@@ -560,7 +566,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 12
-      #define BUTTON_ARRAY_LEN 12
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH 16
       #define LVGL_TICK_PERIOD 6
     
@@ -603,6 +609,12 @@
       #define TFT_DIY
 
       #define GRAPH_VERT_LIM TFT_HEIGHT/2
+
+      #define EXT_BUTTON_WIDTH 20
+
+      #define SCREEN_BUFFER
+
+      #define MAX_SCREEN_BUFFER 22
     
       #define CHAR_WIDTH 12
       #define SCREEN_WIDTH TFT_WIDTH
@@ -621,7 +633,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 12
-      #define BUTTON_ARRAY_LEN 12
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH 16
       #define LVGL_TICK_PERIOD 6
 
@@ -668,6 +680,8 @@
       #define SCREEN_BUFFER
 
       #define MAX_SCREEN_BUFFER 22
+
+      #define EXT_BUTTON_WIDTH 0
     
       #define CHAR_WIDTH 12
       #define SCREEN_WIDTH TFT_WIDTH
@@ -686,7 +700,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 12
-      #define BUTTON_ARRAY_LEN 100
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH 16
       #define LVGL_TICK_PERIOD 6
 
@@ -730,6 +744,8 @@
 
       #define TFT_DIY
       #define KIT
+
+      #define EXT_BUTTON_WIDTH 20
     
       #define CHAR_WIDTH 12
       #define SCREEN_WIDTH TFT_WIDTH
@@ -748,7 +764,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 12
-      #define BUTTON_ARRAY_LEN 12
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH 16
       #define LVGL_TICK_PERIOD 6
 
@@ -802,6 +818,8 @@
 
       #define GRAPH_VERT_LIM TFT_HEIGHT/2
 
+      #define EXT_BUTTON_WIDTH 0
+
       #define CHAR_WIDTH 6
       #define SCREEN_WIDTH TFT_WIDTH // Originally 240
       #define SCREEN_HEIGHT TFT_HEIGHT // Originally 320
@@ -819,7 +837,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 10
-      #define BUTTON_ARRAY_LEN 100
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH (TFT_HEIGHT/16)
       #define LVGL_TICK_PERIOD 6
 
@@ -871,6 +889,8 @@
 
       #define GRAPH_VERT_LIM TFT_HEIGHT/2
 
+      #define EXT_BUTTON_WIDTH 0
+
       #define CHAR_WIDTH 6
       #define SCREEN_WIDTH TFT_WIDTH // Originally 240
       #define SCREEN_HEIGHT TFT_HEIGHT // Originally 320
@@ -888,7 +908,7 @@
       //#define MENU_FONT &FreeSans9pt7b
       //#define MENU_FONT &FreeSansBold9pt7b
       #define BUTTON_SCREEN_LIMIT 5
-      #define BUTTON_ARRAY_LEN 100
+      #define BUTTON_ARRAY_LEN BUTTON_SCREEN_LIMIT
       #define STATUS_BAR_WIDTH (TFT_HEIGHT/16)
       #define LVGL_TICK_PERIOD 6
 
@@ -1119,6 +1139,7 @@
   #define TFTSILVER    15
   #define TFTDARKGREY  16
   #define TFTSKYBLUE   17
+  #define TFTLIME      18
   //// END SPACE SAVING COLORS
 
   //// SCREEN STUFF

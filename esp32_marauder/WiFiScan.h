@@ -100,6 +100,8 @@
 #define BT_SCAN_FLIPPER 45
 #define WIFI_SCAN_CHAN_ANALYZER 46
 #define BT_SCAN_ANALYZER 47
+#define WIFI_SCAN_PACKET_RATE 48
+#define WIFI_SCAN_AP_STA 49
 
 #define BASE_MULTIPLIER 4
 
@@ -179,6 +181,9 @@ class WiFiScan
   private:
     // Wardriver thanks to https://github.com/JosephHewitt
     struct mac_addr mac_history[mac_history_len];
+
+    uint8_t ap_mac[6] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
+    uint8_t sta_mac[6] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 
     // Settings
     uint mac_history_cursor = 0;
@@ -325,7 +330,9 @@ class WiFiScan
 
     void startWiFiAttacks(uint8_t scan_mode, uint16_t color, String title_string);
 
+    void signalAnalyzerLoop(uint32_t tick);
     void channelAnalyzerLoop(uint32_t tick);
+    void packetRateLoop(uint32_t tick);
     void packetMonitorMain(uint32_t currentTime);
     void eapolMonitorMain(uint32_t currentTime);
     void updateMidway();
@@ -369,6 +376,10 @@ class WiFiScan
     //AccessPoint ap_list;
 
     //LinkedList<ssid>* ssids;
+
+    // Stuff for RAW stats
+    uint32_t mgmt_frames = 0;
+    uint32_t data_frames = 0;
 
     String analyzer_name_string = "";
     
@@ -432,6 +443,12 @@ class WiFiScan
 
     wifi_config_t ap_config;
 
+    #ifdef HAS_SCREEN
+      int8_t checkAnalyzerButtons(uint32_t currentTime);
+    #endif
+    void setMac();
+    void renderRawStats();
+    void renderPacketRate();
     void displayAnalyzerString(String str);
     String security_int_to_string(int security_type);
     char* stringToChar(String string);
@@ -452,8 +469,11 @@ class WiFiScan
     String freeRAM();
     void changeChannel();
     void changeChannel(int chan);
+    void RunAPInfo(uint16_t index, bool do_display = true);
     void RunInfo();
     //void RunShutdownBLE();
+    void RunSetMac(uint8_t * mac, bool ap = true);
+    void RunGenerateRandomMac(bool ap = true);
     void RunGenerateSSIDs(int count = 20);
     void RunClearSSIDs();
     void RunClearAPs();
