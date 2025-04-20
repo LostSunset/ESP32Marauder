@@ -7,7 +7,7 @@
   #define POLISH_POTATO
 
   //// BOARD TARGETS
-  //#define MARAUDER_M5STICKC 
+  //#define MARAUDER_M5STICKC
   //#define MARAUDER_M5STICKCP2
   //#define MARAUDER_MINI
   //#define MARAUDER_V4
@@ -23,7 +23,7 @@
   //#define MARAUDER_REV_FEATHER
   //// END BOARD TARGETS
 
-  #define MARAUDER_VERSION "v1.4.2"
+  #define MARAUDER_VERSION "v1.4.4"
 
   #define GRAPH_REFRESH   100
 
@@ -1144,6 +1144,8 @@
 
   //// SCREEN STUFF
   #ifndef HAS_SCREEN
+
+    #define BANNER_TIME GRAPH_REFRESH
 
     #define TFT_WHITE 0
     #define TFT_CYAN 0
